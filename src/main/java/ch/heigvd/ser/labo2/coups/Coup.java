@@ -8,7 +8,6 @@ public abstract class Coup implements ConvertissableEnPGN {
     private final CoupSpecial coupSpecial; // ATTENTION : Cet attribut peut être null si ce n'est pas un coup special
 
     /**
-     *
      * @param coupSpecial A préciser si c'est un coup spécial (echec, mat, nulle)
      */
     Coup(CoupSpecial coupSpecial) {
@@ -16,16 +15,14 @@ public abstract class Coup implements ConvertissableEnPGN {
     }
 
     /**
-     *
      * @return Doit retourner la notation PGN du coup selon ce qui est indiqué dans la donnée du labo
-     *
-     *         Info : Il faut utiliser la méthode notationPGNimplem() ici.
+     * <p>
+     * Info : Il faut utiliser la méthode notationPGNimplem() ici.
      */
     public String notationPGN() {
 
-        // TODO : A implémenter...
         if (coupSpecial != null) {
-            return  notationPGNimplem() +  coupSpecial.notationPGN();
+            return notationPGNimplem() + coupSpecial.notationPGN();
         } else {
             return notationPGNimplem();
 
@@ -34,6 +31,7 @@ public abstract class Coup implements ConvertissableEnPGN {
 
     /**
      * Cette méthode doit être implémentée dans les sous classes : Deplacement et Roque
+     *
      * @return
      */
     protected abstract String notationPGNimplem();
