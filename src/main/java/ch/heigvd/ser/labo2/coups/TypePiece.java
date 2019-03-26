@@ -20,6 +20,5 @@ public enum TypePiece implements ConvertissableEnPGN {
     public String notationPGN() {
 
         return pgn;
-
     }
 }
