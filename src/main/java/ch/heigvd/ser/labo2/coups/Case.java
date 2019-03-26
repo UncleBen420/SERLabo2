@@ -29,9 +29,9 @@ public class Case implements ConvertissableEnPGN {
      */
     @Override
     public String notationPGN() {
+    	
+    	return this.getColonne() + String.valueOf(this.getLigne());
 
-        // TODO : A compléter... (vous pouvez retirer le return null)
-        return null;
 
     }
 
