@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE fse SYSTEM "tournois_fse.dtd">
+
+<fse>
+    <tournois>
+
+        <tournoi nom="Tournois des juniors Suisses 2017" vainqueur="joueur_2">
+
+            <parties>
+
+                <partie
+                        date="2017-05-30" heure="09:00:00" joueurBlancs="joueur_1" joueurNoirs="joueur_2" arbitre="RRA" score="0-1">
+
+                    <!-- Exemple de partie : Mat du sot -->
+                    <coups>
+
+                        <coup>
+                            <deplacement piece="Pion" case_arrivee="f3" />
+                        </coup>
+
+                        <coup>
+                            <deplacement piece="Pion" case_arrivee="e5" />
+                        </coup>
+
+                        <coup>
+                            <deplacement piece="Pion" case_arrivee="g4" />
+                        </coup>
+
+                        <coup coup_special="mat"> 
+                            <deplacement piece="Dame" case_arrivee="h4" />
+                        </coup>
+
+                    </coups>
+
+                </partie>
+
+                <partie date="2017-08-05" heure="13:15:30" arbitre="GMB" joueurBlancs="joueur_2" joueurNoirs="joueur_1" score="1-0">
+
+                    <coups>
+
+                        <!-- Exemple de partie : Mat du berger -->
+                        <coup><deplacement piece="Pion" case_arrivee="e4" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="e5" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="c4" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="c5" /></coup>
+                        <coup><deplacement piece="Dame" case_arrivee="h5" /></coup>
+                        <coup><deplacement piece="Cavalier" case_arrivee="c6" /></coup>
+                        <coup coup_special="mat">
+                            <deplacement piece="Dame" case_arrivee="f7" elimination="Pion" />
+                        </coup>
+
+
+                    </coups>
+
+                </partie>
+
+            </parties>
+
+        </tournoi>
+
+        <tournoi nom="Tournois des seniors Suisses 2019" vainqueur="joueur_3">
+
+            <parties>
+
+                <!-- Exemple d'une partie qui a vraiment été jouée par des champions -->
+                <partie date="2019-01-05" heure="13:15:30" arbitre="GMB" joueurBlancs="joueur_3" joueurNoirs="joueur_1" score="1-0">
+
+                    <coups>
+
+                        <!-- 1 -->
+                        <coup><deplacement piece="Pion" case_arrivee="e4" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="e6" /></coup>
+
+                        <!-- 2 -->
+                        <coup><deplacement piece="Pion" case_arrivee="d4" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="d5" /></coup>
+
+                        <!-- 3 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="d2" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="c5" /></coup>
+
+                        <!-- 4 -->
+                        <coup><deplacement piece="Pion" case_depart="e4" case_arrivee="d5" elimination="Pion" /></coup>
+                        <coup><deplacement piece="Pion" case_depart="e6" case_arrivee="d5" elimination="Pion" /></coup>
+
+                        <!-- 5 -->
+                        <coup><deplacement piece="Cavalier" case_depart="g1" case_arrivee="f3" /></coup>
+                        <coup><deplacement piece="Cavalier" case_arrivee="f6" /></coup>
+
+                        <!-- 6 -->
+                        <coup  coup_special="echec"><deplacement piece="Fou" case_arrivee="b5" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="d7" /></coup>
+
+                        <!-- 7 -->
+                        <coup coup_special="echec"><deplacement piece="Fou" case_arrivee="d7" elimination="Fou" /></coup>
+                        <coup><deplacement piece="Cavalier" case_depart="b8" case_arrivee="d7" elimination="Fou" /></coup>
+
+                        <!-- 8 -->
+                        <coup><roque type="petit_roque" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="e7" /></coup>
+
+                        <!-- 9 -->
+                        <coup><deplacement piece="Pion" case_depart="d4" case_arrivee="c5" elimination="Pion" /></coup>
+                        <coup><deplacement piece="Cavalier" case_arrivee="c5" elimination="Pion" /></coup>
+
+                        <!-- 10 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="d4" /></coup>
+                        <coup><deplacement piece="Dame" case_arrivee="d7" /></coup>
+
+                        <!-- 11 -->
+                        <coup><deplacement piece="Cavalier" case_depart="d2" case_arrivee="f3" /></coup>
+                        <coup><roque type="petit_roque" /></coup>
+
+                        <!-- 12 -->
+                        <coup><deplacement piece="Fou" case_arrivee="f4" /></coup>
+                        <coup><deplacement piece="Tour" case_depart="f8" case_arrivee="e8" /></coup>
+
+                        <!-- 13 -->
+                        <coup><deplacement piece="Tour" case_arrivee="e1" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="f8" /></coup>
+
+                        <!-- 14 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="e5" /></coup>
+                        <coup><deplacement piece="Dame" case_arrivee="a4" /></coup>
+
+                        <!-- 15 -->
+                        <coup><deplacement piece="Pion" case_arrivee="c3" /></coup>
+                        <coup><deplacement piece="Dame" case_arrivee="a6" /></coup>
+
+                        <!-- 16 -->
+                        <coup><deplacement piece="Dame" case_arrivee="e2" /></coup>
+                        <coup><deplacement piece="Dame" case_arrivee="e2" elimination="Dame" /></coup>
+
+                        <!-- 17 -->
+                        <coup><deplacement piece="Tour" case_arrivee="e2" elimination="Dame" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="d6" /></coup>
+
+                        <!-- 18 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="d7" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="f4" elimination="Fou" /></coup>
+
+                        <!-- 19 -->
+                        <coup coup_special="echec"><deplacement piece="Tour" case_arrivee="e8" elimination="Tour" /></coup>
+                        <coup><deplacement piece="Tour" case_arrivee="e8" elimination="Tour" /></coup>
+
+                        <!-- 20 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="c5" elimination="Cavalier" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="c7" /></coup>
+
+                        <!-- 21 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="d3" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="b6" /></coup>
+
+                        <!-- 22 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="b3" /></coup>
+                        <coup><deplacement piece="Roi" case_arrivee="f8" /></coup>
+
+                        <!-- 23 -->
+                        <coup><deplacement piece="Tour" case_arrivee="d1" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="a5" /></coup>
+
+                        <!-- 24 -->
+                        <coup><deplacement piece="Roi" case_arrivee="f1" /></coup>
+                        <coup><deplacement piece="Tour" case_arrivee="c8" /></coup>
+
+                        <!-- 25 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="d2" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="a4" /></coup>
+
+                        <!-- 26 -->
+                        <coup><deplacement piece="Pion" case_arrivee="a3" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="g5" /></coup>
+
+                        <!-- 27 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="f3" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="g4" /></coup>
+
+                        <!-- 28 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="h4" /></coup>
+                        <coup><deplacement piece="Pion" case_arrivee="d4" /></coup>
+
+                        <!-- 29 -->
+                        <coup><deplacement piece="Pion" case_depart="c3" case_arrivee="d4" elimination="Pion" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="d4" elimination="Pion" /></coup>
+
+                        <!-- 30 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="f5" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="b6" /></coup>
+
+                        <!-- 31 -->
+                        <coup><deplacement piece="Cavalier" case_arrivee="b4" /></coup>
+                        <coup><deplacement piece="Cavalier" case_arrivee="e4" /></coup>
+
+                        <!-- 32 -->
+                        <coup><deplacement piece="Pion" case_arrivee="f3" /></coup>
+                        <coup><deplacement piece="Pion" case_depart="g4" case_arrivee="f3" elimination="Pion" /></coup>
+
+                        <!-- 33 -->
+                        <coup><deplacement piece="Pion" case_depart="g2" case_arrivee="f3" elimination="Pion" /></coup>
+                        <coup><deplacement piece="Cavalier" case_arrivee="c5" /></coup>
+
+                        <!-- 34 -->
+                        <coup><deplacement piece="Pion" case_arrivee="h4" /></coup>
+                        <coup><deplacement piece="Tour" case_arrivee="d8" /></coup>
+
+                        <!-- 35 -->
+                        <coup><deplacement piece="Tour" case_arrivee="d5" /></coup>
+                        <coup><deplacement piece="Fou" case_arrivee="a7" /></coup>
+
+                        <!-- 36 -->
+                        <coup coup_special="mat"><deplacement piece="Tour" case_arrivee="d8" elimination="Tour" /></coup>
+
+                    </coups>
+
+                </partie>
+
+                <partie date="2019-01-05" heure="13:15:30" arbitre="RRA" joueurBlancs="joueur_3" joueurNoirs="joueur_1" score="0.5-0.5">
+
+                    <!-- Exemple de partie bidon avec une promotion -->
+
+                    <!-- 1. a4 b5 2. axb5 c5 3. b6 Cc6 4. bxa7 Tb8 5. a8=D -->
+                    <coups>
+
+                        <!-- 1 -->
+                        <coup>
+                            <deplacement case_arrivee="a4" piece="Pion" />
+                        </coup>
+
+                        <coup>
+                            <deplacement case_arrivee="b5" piece="Pion" />
+                        </coup>
+
+                        <!-- 2 -->
+                        <coup>
+                            <deplacement case_depart="a4" case_arrivee="b5" piece="Pion" elimination="Pion" />
+                        </coup>
+
+                        <coup>
+                            <deplacement case_arrivee="c5" piece="Pion" />
+                        </coup>
+
+                        <!-- 3 -->
+                        <coup>
+                            <deplacement case_arrivee="b6" piece="Pion" />
+                        </coup>
+
+                        <coup>
+                            <deplacement case_arrivee="c6" piece="Cavalier" />
+                        </coup>
+
+                        <!-- 4 -->
+                        <coup>
+                            <deplacement case_depart="b6" case_arrivee="a7" piece="Pion" elimination="Pion" />
+                        </coup>
+
+                        <coup>
+                            <deplacement case_arrivee="b8" piece="Tour" />
+                        </coup>
+
+                        <!-- 5 -->
+                        <coup>
+                            <deplacement case_arrivee="a8" piece="Pion" promotion="Dame" />
+                        </coup>
+
+
+                    </coups>
+
+                </partie>
+
+            </parties>
+
+        </tournoi>
+
+    </tournois>
+
+    <joueurs>
+        <joueur identifiantFSE="joueur_1" prenom="Garry" nom="Kasparov" classementELO="2812" />
+        <joueur identifiantFSE="joueur_2" prenom="Anatoli" nom="Karpov" classementELO="2622" />
+        <joueur identifiantFSE="joueur_3" prenom="Magnus" nom="Carlsen" classementELO="2845" />
+    </joueurs>
+
+    <arbitres>
+        <arbitre nom="Racine" prenom="Raphaël" identifiant="RRA" />
+        <arbitre nom="Breguet" prenom="Guy-Michel" identifiant="GMB" />
+    </arbitres>
+
+</fse>

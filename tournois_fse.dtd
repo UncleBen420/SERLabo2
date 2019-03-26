@@ -1,0 +1,48 @@
+<!-- Tournois -->
+<!ELEMENT fse (tournois, joueurs, arbitres)>
+<!ELEMENT tournois (tournoi*) >
+<!ELEMENT tournoi (parties) >
+<!ATTLIST tournoi nom CDATA #REQUIRED >
+<!ATTLIST tournoi vainqueur IDREF #REQUIRED >
+
+<!-- Joueurs -->
+<!ELEMENT joueurs (joueur*) >
+<!ELEMENT joueur EMPTY >
+<!ATTLIST joueur identifiantFSE ID #REQUIRED >
+<!ATTLIST joueur nom CDATA #REQUIRED >
+<!ATTLIST joueur prenom CDATA #REQUIRED >
+<!ATTLIST joueur classementELO CDATA #REQUIRED >
+
+<!-- Arbitres -->
+<!ELEMENT arbitres (arbitre*) >
+<!ELEMENT arbitre EMPTY >
+<!ATTLIST arbitre nom CDATA #REQUIRED >
+<!ATTLIST arbitre prenom CDATA #REQUIRED >
+<!ATTLIST arbitre identifiant ID #REQUIRED >
+
+<!-- Parties -->
+<!ELEMENT parties (partie)* >
+<!ELEMENT partie (coups) >
+<!ATTLIST partie joueurBlancs IDREF #REQUIRED >
+<!ATTLIST partie joueurNoirs IDREF #REQUIRED >
+<!ATTLIST partie date CDATA #REQUIRED >
+<!ATTLIST partie heure CDATA #REQUIRED >
+<!ATTLIST partie score ( 1-0 | 0.5-0.5 | 0-1 ) #REQUIRED >
+<!ATTLIST partie arbitre IDREF #REQUIRED >
+
+<!-- Généralités sur les coups joués -->
+<!ELEMENT coups (coup+) >
+<!ELEMENT coup (deplacement | roque) >
+<!ATTLIST coup coup_special ( echec | mat | nulle ) #IMPLIED>
+
+<!-- Deplacements -->
+<!ELEMENT deplacement EMPTY>
+<!ATTLIST deplacement case_arrivee CDATA #REQUIRED>
+<!ATTLIST deplacement piece ( Tour | Cavalier | Fou | Dame | Roi | Pion ) #REQUIRED >
+<!ATTLIST deplacement case_depart CDATA #IMPLIED>
+<!ATTLIST deplacement elimination ( Cavalier | Fou | Dame | Tour | Pion ) #IMPLIED >
+<!ATTLIST deplacement promotion (Cavalier | Fou | Dame | Tour) #IMPLIED >
+
+<!-- Roque -->
+<!ELEMENT roque EMPTY >
+<!ATTLIST roque type ( petit_roque | grand_roque ) #REQUIRED >
