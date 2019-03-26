@@ -26,9 +26,7 @@ public class Case implements ConvertissableEnPGN {
      * @return Les coordonnées de la case sous la forme : "a1" (colonne en minuscule suivi du numéro de ligne)
      */
     public String notationPGN() {
-
         return getColonne() + String.valueOf(getLigne());
-
     }
 
 }
