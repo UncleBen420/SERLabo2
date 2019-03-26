@@ -50,12 +50,18 @@ public class Deplacement extends Coup {
         String resultat = new String();
 
         resultat+= pieceDeplacee.notationPGN();
-        if(depart !=null)
-            resultat+= depart.notationPGN();
+        if(depart !=null && pieceDeplacee.notationPGN().contentEquals("")) {
+            resultat+= depart.getColonne();
+        } else if (depart !=null ){
+            resultat += depart.notationPGN();
+        }
         if(elimination !=null)
-            resultat+=elimination.notationPGN();
+            resultat+="x";
         if(arrivee!= null)
             resultat+=arrivee.notationPGN();
+        if (promotion !=null){
+            resultat += "=" + promotion.notationPGN();
+        }
 
         // TODO A implémenter (vous pouvez retirer le return null)
         return resultat;
