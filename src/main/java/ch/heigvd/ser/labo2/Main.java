@@ -60,16 +60,15 @@ class Main {
                                 );
                             }
 
-                            if(iCoup%2 == 1){
+                            if((iCoup%2) == 1) {
                                 pw.print(" " + deplacement_notationPGN.notationPGNimplem() + "\n");
-                            }
-                            else {
-                                pw.print((iCoup - iCoup/2) + " " + deplacement_notationPGN.notationPGNimplem());
+                            } else {
+                                pw.print(((iCoup+1) - (iCoup+1)/2) + " " + deplacement_notationPGN.notationPGNimplem());
                             }
                         }
+                        pw.flush();
+                        pw.close();
                     }
-                    pw.flush();
-                    pw.close();
                 }
 
 
