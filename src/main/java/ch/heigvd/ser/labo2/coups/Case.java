@@ -6,9 +6,8 @@ public class Case implements ConvertissableEnPGN {
     private final int ligne;
 
     /**
-     *
      * @param colonne La lettre représentant la colonne (entre A et H)
-     * @param ligne La lettre représentant la ligne (entre 1 et 8)
+     * @param ligne   La lettre représentant la ligne (entre 1 et 8)
      */
     public Case(char colonne, int ligne) {
         this.colonne = colonne;
@@ -24,11 +23,9 @@ public class Case implements ConvertissableEnPGN {
     }
 
     /**
-     *
      * @return Les coordonnées de la case sous la forme : "a1" (colonne en minuscule suivi du numéro de ligne)
      */
     public String notationPGN() {
-        // TODO : A compléter... (vous pouvez retirer le return null)
         return getColonne() + String.valueOf(getLigne());
     }
 
