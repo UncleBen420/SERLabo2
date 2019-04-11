@@ -8,8 +8,7 @@
 
             <parties>
 
-                <partie
-                        date="2017-05-30" heure="09:00:00" joueurBlancs="joueur_1" joueurNoirs="joueur_2" arbitre="RRA" score="0-1">
+                <partie date="2017-05-30" heure="09:00:00" joueurBlancs="joueur_1" joueurNoirs="joueur_2" arbitre="RRA" score="0-1">
 
                     <!-- Exemple de partie : Mat du sot -->
                     <coups>

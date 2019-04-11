@@ -34,7 +34,7 @@ public abstract class Coup implements ConvertissableEnPGN {
      *
      * @return
      */
-    protected abstract String notationPGNimplem();
+    public abstract String notationPGNimplem();
 
 }
 

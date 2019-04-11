@@ -22,49 +22,54 @@ class Main {
             File xmlFile = new File(xmlFilePath);
 
             try {
-                Document document = (Document) saxBuilder.build(xmlFile);
+                Document document = saxBuilder.build(xmlFile);
                 Element rootElement = document.getRootElement();
                 Element tournois = rootElement.getChild("tournois");
                 String nomTournois;
 
                 List<Element> tournoi = tournois.getChildren("tournoi");
-                for (int iTournoi = 0; iTournoi < tournoi.size(); ++iTournoi) {
+                for (int iTournoi = 0; iTournoi < tournoi.size(); iTournoi++){
                     nomTournois = tournoi.get(iTournoi).getAttributeValue("nom");
                     Element parties = tournoi.get(iTournoi).getChild("parties");
 
                     List<Element> partie = parties.getChildren("partie");
-
-                    for (int iPartie = 0; iPartie < partie.size(); ++iPartie) {
-                        PrintWriter pw = new PrintWriter(new FileWriter(nomTournois + "_" + iPartie + 1));
-
+                    PrintWriter pw = null;
+                    for (int iPartie = 0; iPartie < partie.size(); iPartie++) {
+                        pw = new PrintWriter(new FileWriter(nomTournois + "_Partie" + (iPartie + 1)));
 
                         Element coups = partie.get(iPartie).getChild("coups");
                         List<Element> coup = coups.getChildren("coup");
-                        for (int iCoup = 0; iCoup < partie.size(); ++iCoup){
-                            Element deplacement = coup.get(iCoup).getChild("deplacement");
-                            if ( deplacement!=null){
-                                Element caseDepart = deplacement.getChild("case_depart");
-                                Deplacement deplacement1 = new Deplacement(
-                                        TypePiece.valueOf(deplacement.getAttributeValue("piece")),
-                                        TypePiece.valueOf(deplacement.getAttributeValue("elimination")),
-                                        TypePiece.valueOf(deplacement.getAttributeValue("promotion")),
-                                        CoupSpecial.valueOf( coup.get(iCoup).getAttributeValue("coup_special")),
-                                        new Case(caseDepart.getAttributeValue("case_depart").charAt(0),caseDepart.getAttributeValue("case_depart").charAt(1)),
-                                        new Case(caseDepart.getAttributeValue("case_arrivee").charAt(0),caseDepart.getAttributeValue("case_depart").charAt(1))
+                        for (int iCoup = 0; iCoup < coup.size(); iCoup++){
+                            Element deplacementData = coup.get(iCoup).getChild("deplacement");
+                            Coup deplacement_notationPGN;
+                            if ( deplacementData!=null){
+                                deplacement_notationPGN = new Deplacement(
+                                        TypePiece.valueOf(deplacementData.getAttributeValue("piece")),
+                                        deplacementData.getAttributeValue("elimination") == null ? null : TypePiece.valueOf(deplacementData.getAttributeValue("elimination")),
+                                        deplacementData.getAttributeValue("promotion") == null ? null : TypePiece.valueOf(deplacementData.getAttributeValue("promotion")),
+                                        coup.get(iCoup).getAttributeValue("coup_special") == null ? null : CoupSpecial.valueOf( coup.get(iCoup).getAttributeValue("coup_special").toUpperCase()),
+                                        deplacementData.getAttributeValue("case_depart") == null ? null : new Case(deplacementData.getAttributeValue("case_depart").charAt(0),Character.getNumericValue(deplacementData.getAttributeValue("case_depart").charAt(1))),
+                                        deplacementData.getAttributeValue("case_arrivee") == null ? null : new Case(deplacementData.getAttributeValue("case_arrivee").charAt(0),Character.getNumericValue(deplacementData.getAttributeValue("case_arrivee").charAt(1)))
                                 );
-
-                                pw.println(iCoup + deplacement1.notationPGNimplem());
-                            } else {
-                                deplacement = coup.get(iCoup).getChild("roque");
-
+                            }
+                            else {
+                                deplacementData = coup.get(iCoup).getChild("roque");
+                                deplacement_notationPGN = new Roque(
+                                        coup.get(iCoup).getAttributeValue("coup_special") == null ? null : CoupSpecial.valueOf( coup.get(iCoup).getAttributeValue("coup_special").toUpperCase()),
+                                        TypeRoque.valueOf(deplacementData.getAttributeValue("type").toUpperCase().substring(0,5))
+                                );
                             }
 
+                            if(iCoup%2 == 1){
+                                pw.print(" " + deplacement_notationPGN.notationPGNimplem() + "\n");
+                            }
+                            else {
+                                pw.print((iCoup - iCoup/2) + " " + deplacement_notationPGN.notationPGNimplem());
+                            }
                         }
-
-
                     }
-
-
+                    pw.flush();
+                    pw.close();
                 }
 
 
