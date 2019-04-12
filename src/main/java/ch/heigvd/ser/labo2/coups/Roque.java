@@ -24,7 +24,7 @@ public class Roque extends Coup {
      *         Ici, vous pouvez faire appel directement à l'énumération typeRoque
      */
     @Override
-    protected String notationPGNimplem() {
+    public String notationPGNimplem() {
         return typeRoque.notationPGN();
     }
 
